@@ -1,0 +1,28 @@
+{
+  "name": "webhook-router-v2",
+  "version": "2.0.0",
+  "description": "Simple, modular webhook router with forwarding and logging",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "cf:build": "tsc --target ES2022 --module ESNext --moduleResolution bundler",
+    "cf:dev": "npm run cf:build && wrangler dev",
+    "cf:deploy": "npm run cf:build && wrangler deploy",
+    "docker:build": "docker build -t webhook-router .",
+    "docker:run": "docker run -p 3000:3000 webhook-router"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.8.0",
+    "hono": "^4.0.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.0.0",
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0",
+    "wrangler": "^4.22.0"
+  }
+}

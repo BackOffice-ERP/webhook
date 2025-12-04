@@ -1,0 +1,10 @@
+name = "webhook-router-v2"
+main = "dist/cloudflare.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+ENVIRONMENT = "production"
+
+# Add your environment variables here
+# FACEBOOK_VERIFY_TOKEN = "your_token"
+# INSTAGRAM_VERIFY_TOKEN = "your_token"
